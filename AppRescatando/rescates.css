@@ -1,0 +1,324 @@
+/* Estilos específicos para la página de rescates */
+
+/* Hero Section Rescates */
+.hero-rescate {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+    color: white;
+    padding: 100px 0 80px;
+    margin-top: 76px;
+}
+
+.hero-rescate h1 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.hero-rescate .lead {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.stat-item p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Formulario de Rescate */
+.formulario-rescate {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.section-title i {
+    font-size: 1.2rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+/* Preview de Fotos */
+#previewFotos .foto-preview {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.foto-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+
+.foto-preview .remove-foto {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* Galería de Rescates */
+.galeria-rescates {
+    padding: 80px 0;
+    background: white;
+}
+
+.filtros-rescate {
+    margin-bottom: 30px;
+}
+
+.filtros-rescate .btn {
+    margin: 0 5px 10px;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: 500;
+}
+
+.filtros-rescate .btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Cards de Rescate */
+.card-rescate {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card-rescate:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.rescate-imagen {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.rescate-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-rescate:hover .rescate-imagen img {
+    transform: scale(1.05);
+}
+
+.rescate-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.rescate-badge.perro {
+    background: var(--primary-color);
+}
+
+.rescate-badge.gato {
+    background: var(--secondary-color);
+}
+
+.rescate-badge.otro {
+    background: var(--accent-color);
+}
+
+.rescate-info {
+    padding: 25px;
+}
+
+.rescate-info h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.rescate-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.rescate-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.rescate-descripcion {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    /*-webkit-line-clamp: 3;*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.rescate-estado {
+    margin-top: 15px;
+}
+
+/* Estados de los rescates */
+.badge {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.bg-success {
+    background-color: var(--secondary-color) !important;
+}
+
+.bg-warning {
+    background-color: var(--accent-color) !important;
+    color: #000 !important;
+}
+
+.bg-info {
+    background-color: var(--primary-color) !important;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-rescate {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-rescate {
+        padding: 60px 0 40px;
+        text-align: center;
+    }
+    
+    .hero-rescate h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .form-container {
+        padding: 25px;
+    }
+    
+    .rescate-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-rescate h1 {
+        font-size: 1.8rem;
+    }
+    
+    .form-container {
+        padding: 20px 15px;
+    }
+    
+    .filtros-rescate .btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}

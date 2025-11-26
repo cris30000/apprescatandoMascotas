@@ -1,0 +1,138 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <i class="fas fa-paw"></i> Rescatando Mascotas
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#adopta">Adopta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#rescata">Rescata</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="suscripciones.html">Suscripciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#donaciones">Donaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user"></i> Mi Cuenta
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Registrarse</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#adminModal">Panel Admin</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Modal de Inicio de Sesión -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Iniciar Sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="loginEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Recordarme</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Registro -->
+<div class="modal fade" id="registerModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Crear Cuenta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="registerName" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="registerName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="registerEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="registerPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerConfirmPassword" class="form-label">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="registerConfirmPassword" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                        <label class="form-check-label" for="acceptTerms">Acepto los términos y condiciones</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Administrador -->
+<div class="modal fade" id="adminModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Panel de Administración</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="adminForm">
+                    <div class="mb-3">
+                        <label for="adminUsername" class="form-label">Usuario Admin</label>
+                        <input type="text" class="form-control" id="adminUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="adminPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="adminPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Acceder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

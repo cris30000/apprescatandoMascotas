@@ -1,0 +1,554 @@
+/* ===== VARIABLES Y CONFIGURACIÓN GENERAL ===== */
+:root {
+    --primary-color: #4e54c8;
+    --secondary-color: #8f94fb;
+    --accent-color: #ff6b6b;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --gradient-primary: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+    --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #ffa8a8 100%);
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    overflow-x: hidden;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-suscripciones {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-suscripciones::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-image-container {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: var(--transition);
+}
+
+.hero-image-container:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.hero-main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-benefits {
+    margin: 2rem 0;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    transition: var(--transition);
+}
+
+.benefit-item:hover .benefit-icon {
+    background: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.hero-cta {
+    margin-top: 2rem;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    flex: 1;
+    margin: 0 0.5rem;
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* ===== SECCIONES GENERALES ===== */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== PLANES DE SUSCRIPCIÓN ===== */
+.planes-suscripcion {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+.plan-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.plan-card.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.plan-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.plan-badge {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 5px 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.plan-header {
+    padding: 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    text-align: center;
+}
+
+.plan-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.amount {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.period {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.plan-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.plan-features {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.plan-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-features li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+.plan-features i {
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+.plan-features .fa-check {
+    color: var(--success-color);
+}
+
+.plan-features .fa-times {
+    color: #dc3545;
+}
+
+.plan-footer {
+    padding: 0 2rem 2rem;
+}
+
+.btn-plan {
+    width: 100%;
+    padding: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+/* ===== COMPARACIÓN DE PLANES ===== */
+.comparacion-planes {
+    padding: 100px 0;
+    background: white;
+}
+
+.comparison-table {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+}
+
+.comparison-table .table {
+    margin-bottom: 0;
+}
+
+.comparison-table thead th {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table tbody td {
+    padding: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border-color: #f0f0f0;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* ===== FORMULARIO DE SUSCRIPCIÓN ===== */
+.formulario-suscripcion {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+.form-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    padding: 3rem;
+}
+
+.form-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(78, 84, 200, 0.25);
+}
+
+.plan-seleccionado {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.selected-plan {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer h5 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer h5::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+.footer a {
+    color: #adb5bd;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+}
+
+.footer a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #495057;
+    text-align: center;
+    color: #adb5bd;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .plan-card.featured {
+        transform: scale(1);
+    }
+    
+    .plan-card.featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+    }
+    
+    .stat-card {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-suscripcion {
+        padding: 60px 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .planes-suscripcion,
+    .comparacion-planes,
+    .formulario-suscripcion {
+        padding: 60px 0;
+    }
+    
+    .form-container {
+        padding: 2rem;
+    }
+    
+    .comparison-table {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .plan-header {
+        padding: 1.5rem;
+    }
+    
+    .plan-features {
+        padding: 1.5rem;
+    }
+    
+    .plan-footer {
+        padding: 0 1.5rem 1.5rem;
+    }
+}

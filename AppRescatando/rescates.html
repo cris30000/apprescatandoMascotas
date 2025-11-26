@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescate de Mascotas - Patitas Felices</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="rescates.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="headermejorado"></div>
+
+    <!-- Hero Section Rescates -->
+    <section class="hero-rescate">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Salva una Vida Hoy</h1>
+                    <p class="lead">Cada reporte de rescate puede salvar a un animal necesitado. Tu ayuda marca la diferencia.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>1,250+</h3>
+                            <p>Rescates Realizados</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>Atención Disponible</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>95%</h3>
+                            <p>Éxito en Rescates</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Equipo de rescate" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Reporte de Rescate -->
+    <section class="formulario-rescate" id="formulario">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-container">
+                        <h2 class="text-center mb-4">Reportar Animal Necesitado</h2>
+                        <form id="reporteRescateForm">
+                            <!-- Información del Animal -->
+                            <div class="form-section">
+                                <h4 class="section-title">
+                                    <i class="fas fa-paw me-2"></i>Información del Animal
+                                </h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="tipoAnimal" class="form-label">Tipo de Animal *</label>
+                                            <select class="form-select" id="tipoAnimal" required>
+                                                <option value="">Seleccionar...</option>
+                                                <option value="perro">Perro</option>
+                                                <option value="gato">Gato</option>
+                                                <option value="otro">Otro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="condicion" class="form-label">Condición del Animal *</label>
+                                            <select class="form-select" id="condicion" required>
+                                                <option value="">Seleccionar...</option>
+                                                <option value="herido">Herido/Lesión visible</option>
+                                                <option value="enfermo">Enfermo/Débil</option>
+                                                <option value="atrapado">Atrapado/Peligro</option>
+                                                <option value="abandonado">Abandonado/Solo</option>
+                                                <option value="saludable">Aparece saludable</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="tamanio" class="form-label">Tamaño Aproximado</label>
+                                            <select class="form-select" id="tamanio">
+                                                <option value="">Seleccionar...</option>
+                                                <option value="pequeno">Pequeño (hasta 10kg)</option>
+                                                <option value="mediano">Mediano (10-25kg)</option>
+                                                <option value="grande">Grande (25kg+)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="color" class="form-label">Color Principal</label>
+                                            <input type="text" class="form-control" id="color" placeholder="Ej: Negro, Blanco, Marrón...">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="descripcion" class="form-label">Descripción Detallada *</label>
+                                    <textarea class="form-control" id="descripcion" rows="4" 
+                                              placeholder="Describe al animal, su comportamiento, señales visibles de lesiones, etc..." required></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Ubicación -->
+                            <div class="form-section">
+                                <h4 class="section-title">
+                                    <i class="fas fa-map-marker-alt me-2"></i>Ubicación del Animal
+                                </h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="direccion" class="form-label">Dirección Exacta *</label>
+                                            <input type="text" class="form-control" id="direccion" 
+                                                   placeholder="Calle, número, colonia..." required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="ciudad" class="form-label">Ciudad *</label>
+                                            <input type="text" class="form-control" id="ciudad" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="referencias" class="form-label">Puntos de Referencia</label>
+                                            <input type="text" class="form-control" id="referencias" 
+                                                   placeholder="Cerca de... al lado de...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="tiempo" class="form-label">¿Cuánto tiempo lleva ahí?</label>
+                                            <select class="form-select" id="tiempo">
+                                                <option value="">Seleccionar...</option>
+                                                <option value="horas">Horas</option>
+                                                <option value="dias">Días</option>
+                                                <option value="semanas">Semanas</option>
+                                                <option value="desconocido">No sé</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Información de Contacto -->
+                            <div class="form-section">
+                                <h4 class="section-title">
+                                    <i class="fas fa-user me-2"></i>Tu Información
+                                </h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="nombreReportante" class="form-label">Tu Nombre *</label>
+                                            <input type="text" class="form-control" id="nombreReportante" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="telefono" class="form-label">Teléfono *</label>
+                                            <input type="tel" class="form-control" id="telefono" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="comentarios" class="form-label">Comentarios Adicionales</label>
+                                    <textarea class="form-control" id="comentarios" rows="3" 
+                                              placeholder="Alguna información adicional que consideres importante..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Subir Fotos -->
+                            <div class="form-section">
+                                <h4 class="section-title">
+                                    <i class="fas fa-camera me-2"></i>Fotos (Opcional pero muy útil)
+                                </h4>
+                                <div class="mb-3">
+                                    <label for="fotos" class="form-label">Subir Fotos del Animal</label>
+                                    <input type="file" class="form-control" id="fotos" multiple accept="image/*">
+                                    <div class="form-text">Puedes seleccionar múltiples fotos. Máximo 5MB por imagen.</div>
+                                </div>
+                                <div id="previewFotos" class="row mt-3"></div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Enviar Reporte de Rescate
+                                </button>
+                                <p class="text-muted mt-2">* Campos obligatorios</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Rescates Exitosos -->
+    <section class="galeria-rescates" id="galeria">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2>Rescates Exitosos</h2>
+                    <p class="lead">Historias de esperanza y segundas oportunidades</p>
+                </div>
+            </div>
+            
+            <!-- Filtros -->
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="filtros-rescate text-center">
+                        <button class="btn btn-outline-primary active" data-filter="todos">Todos</button>
+                        <button class="btn btn-outline-primary" data-filter="perro">Perros</button>
+                        <button class="btn btn-outline-primary" data-filter="gato">Gatos</button>
+                        <button class="btn btn-outline-primary" data-filter="otro">Otros</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grid de Rescates -->
+            <div class="row" id="gridRescates">
+                <!-- Rescate 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-categoria="perro">
+                    <div class="card-rescate">
+                        <div class="rescate-imagen">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=612&q=80" 
+                                 alt="Max rescatado" class="img-fluid">
+                            <div class="rescate-badge perro">Perro</div>
+                        </div>
+                        <div class="rescate-info">
+                            <h4>Max</h4>
+                            <div class="rescate-meta">
+                                <span class="fecha-rescate"><i class="fas fa-calendar me-1"></i>15 Nov 2023</span>
+                                <span class="ubicacion-rescate"><i class="fas fa-map-marker-alt me-1"></i>Centro</span>
+                            </div>
+                            <p class="rescate-descripcion">
+                                Rescatado de una construcción abandonada con una pata fracturada. Después de tratamiento y recuperación, fue adoptado por la familia Rodríguez.
+                            </p>
+                            <div class="rescate-estado">
+                                <span class="badge bg-success">Adoptado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rescate 2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-categoria="gato">
+                    <div class="card-rescate">
+                        <div class="rescate-imagen">
+                            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Luna rescatada" class="img-fluid">
+                            <div class="rescate-badge gato">Gato</div>
+                        </div>
+                        <div class="rescate-info">
+                            <h4>Luna</h4>
+                            <div class="rescate-meta">
+                                <span class="fecha-rescate"><i class="fas fa-calendar me-1"></i>02 Dic 2023</span>
+                                <span class="ubicacion-rescate"><i class="fas fa-map-marker-alt me-1"></i>Norte</span>
+                            </div>
+                            <p class="rescate-descripcion">
+                                Encontrada en un parque industrial, deshidratada y desnutrida. Respondió excelente al tratamiento y ahora busca hogar.
+                            </p>
+                            <div class="rescate-estado">
+                                <span class="badge bg-warning">En Busca de Hogar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rescate 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-categoria="perro">
+                    <div class="card-rescate">
+                        <div class="rescate-imagen">
+                            <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Rocky rescatado" class="img-fluid">
+                            <div class="rescate-badge perro">Perro</div>
+                        </div>
+                        <div class="rescate-info">
+                            <h4>Rocky</h4>
+                            <div class="rescate-meta">
+                                <span class="fecha-rescate"><i class="fas fa-calendar me-1"></i>20 Oct 2023</span>
+                                <span class="ubicacion-rescate"><i class="fas fa-map-marker-alt me-1"></i>Sur</span>
+                            </div>
+                            <p class="rescate-descripcion">
+                                Atrapado en una alcantarilla durante lluvias torrenciales. Rescatado por nuestro equipo de emergencias. Totalmente recuperado.
+                            </p>
+                            <div class="rescate-estado">
+                                <span class="badge bg-success">Adoptado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rescate 4 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-categoria="gato">
+                    <div class="card-rescate">
+                        <div class="rescate-imagen">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Mimi rescatada" class="img-fluid">
+                            <div class="rescate-badge gato">Gato</div>
+                        </div>
+                        <div class="rescate-info">
+                            <h4>Mimi</h4>
+                            <div class="rescate-meta">
+                                <span class="fecha-rescate"><i class="fas fa-calendar me-1"></i>08 Ene 2024</span>
+                                <span class="ubicacion-rescate"><i class="fas fa-map-marker-alt me-1"></i>Este</span>
+                            </div>
+                            <p class="rescate-descripcion">
+                                Madre lactante rescatada con sus 4 crías de un edificio en demolición. Toda la familia está sana y en proceso de socialización.
+                            </p>
+                            <div class="rescate-estado">
+                                <span class="badge bg-info">En Tratamiento</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rescate 5 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-categoria="perro">
+                    <div class="card-rescate">
+                        <div class="rescate-imagen">
+                            <img src="https://images.unsplash.com/photo-1517423447168-cb804aafa6e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Toby rescatado" class="img-fluid">
+                            <div class="rescate-badge perro">Perro</div>
+                        </div>
+                        <div class="rescate-info">
+                            <h4>Toby</h4>
+                            <div class="rescate-meta">
+                                <span class="fecha-rescate"><i class="fas fa-calendar me-1"></i>12 Sep 2023</span>
+                                <span class="ubicacion-rescate"><i class="fas fa-map-marker-alt me-1"></i>Oeste</span>
+                            </div>
+                            <p class="rescate-descripcion">
+                                Encontrado con sarna avanzada y desnutrición severa. Después de meses de tratamiento, se transformó en un perro saludable y feliz.
+                            </p>
+                            <div class="rescate-estado">
+                                <span class="badge bg-success">Adoptado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Rescate 6 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-categoria="otro">
+                    <div class="card-rescate">
+                        <div class="rescate-imagen">
+                            <img src="https://images.unsplash.com/photo-1557008071-6ec8d74e9c6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Conejo rescatado" class="img-fluid">
+                            <div class="rescate-badge otro">Otro</div>
+                        </div>
+                        <div class="rescate-info">
+                            <h4>Algodón</h4>
+                            <div class="rescate-meta">
+                                <span class="fecha-rescate"><i class="fas fa-calendar me-1"></i>25 Nov 2023</span>
+                                <span class="ubicacion-rescate"><i class="fas fa-map-marker-alt me-1"></i>Centro</span>
+                            </div>
+                            <p class="rescate-descripcion">
+                                Conejo doméstico abandonado en un parque. Rescatado y actualmente en hogar temporal especializado en animales exóticos.
+                            </p>
+                            <div class="rescate-estado">
+                                <span class="badge bg-warning">En Busca de Hogar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary">Ver Más Rescates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+    <script src="rescates.js"></script>
+</body>
+</html>

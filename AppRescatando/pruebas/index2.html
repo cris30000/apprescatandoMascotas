@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patitas Felices - Rescate y Adopción</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #1cc88a;
+            --accent-color: #f6c23e;
+            --dark-color: #2e59d9;
+            --light-color: #f8f9fc;
+            --text-color: #5a5c69;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            padding-top: 76px; /* Para compensar el header fijo */
+        }
+        
+        /* Header Styles */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .navbar-brand i {
+            color: var(--secondary-color);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-color) !important;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-color);
+            border-color: var(--dark-color);
+        }
+        
+        .btn-success {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(78, 115, 223, 0.8), rgba(78, 115, 223, 0.9)), url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* Pets Section */
+        .pets-section {
+            padding: 80px 0;
+        }
+        
+        .pet-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .pet-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pet-img {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .pet-info {
+            padding: 20px;
+        }
+        
+        .pet-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .pet-breed {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer p, .footer a {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+                margin-top: 15px;
+            }
+            
+            .nav-link {
+                margin: 5px 0;
+            }
+            
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-paw"></i> Patitas Felices
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#adopta">Adopta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rescata">Rescata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#suscripciones">Suscripciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#donaciones">Donaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Mi Cuenta
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Registrarse</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#adminModal">Panel Admin</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1>Encuentra a tu compañero perfecto</h1>
+            <p>Miles de mascotas esperan un hogar. Ayúdanos a cambiar sus vidas.</p>
+            <a href="#adopta" class="btn btn-light btn-lg me-3">Adoptar</a>
+            <a href="#rescata" class="btn btn-outline-light btn-lg">Reportar Rescate</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2>¿Cómo funciona?</h2>
+                    <p class="lead">Sigue estos sencillos pasos para encontrar a tu nueva mascota</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Busca</h4>
+                        <p>Explora nuestro catálogo de mascotas disponibles para adopción.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Conoce</h4>
+                        <p>Conoce a la mascota y asegúrate de que es compatible con tu estilo de vida.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Adopta</h4>
+                        <p>Completa el proceso de adopción y dale un hogar a tu nueva mascota.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pets Section -->
+    <section class="pets-section" id="adopta">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2>Mascotas en Adopción</h2>
+                    <p class="lead">Conoce a nuestros amigos que buscan un hogar</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pet-card">
+                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=612&q=80" class="pet-img w-100" alt="Perro en adopción">
+                        <div class="pet-info">
+                            <h4 class="pet-name">Max</h4>
+                            <p class="pet-breed">Labrador Mix • 2 años</p>
+                            <p>Max es un perro juguetón y cariñoso que adora los paseos y los niños.</p>
+                            <a href="#" class="btn btn-primary">Conocer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pet-card">
+                        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="pet-img w-100" alt="Gato en adopción">
+                        <div class="pet-info">
+                            <h4 class="pet-name">Luna</h4>
+                            <p class="pet-breed">Gato Doméstico • 1 año</p>
+                            <p>Luna es una gata tranquila que disfruta de la compañía y los mimos.</p>
+                            <a href="#" class="btn btn-primary">Conocer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pet-card">
+                        <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="pet-img w-100" alt="Perro en adopción">
+                        <div class="pet-info">
+                            <h4 class="pet-name">Rocky</h4>
+                            <p class="pet-breed">Beagle • 3 años</p>
+                            <p>Rocky es un perro energético que necesita una familia activa.</p>
+                            <a href="#" class="btn btn-primary">Conocer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <a href="#" class="btn btn-outline-primary">Ver todas las mascotas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-paw"></i> Patitas Felices</h5>
+                    <p>Organización sin fines de lucro dedicada al rescate y adopción de mascotas. Trabajamos para encontrar hogares amorosos para animales necesitados.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Enlaces</h5>
+                    <a href="#home">Inicio</a>
+                    <a href="#adopta">Adopta</a>
+                    <a href="#rescata">Rescata</a>
+                    <a href="#suscripciones">Suscripciones</a>
+                    <a href="#donaciones">Donaciones</a>
+                    <a href="#nosotros">Nosotros</a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Ficticia 123, Ciudad</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope"></i> info@patitasfelices.org</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Suscríbete para recibir noticias sobre nuevas mascotas y eventos.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Tu correo">
+                        <button class="btn btn-primary" type="button">Suscribir</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Patitas Felices. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Inicio de Sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="loginEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPassword">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Recordarme</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Crear Cuenta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="registerName" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="registerName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="registerEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="registerPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="acceptTerms">
+                            <label class="form-check-label" for="acceptTerms">Acepto los términos y condiciones</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Administrador -->
+    <div class="modal fade" id="adminModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Panel de Administración</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="adminUsername" class="form-label">Usuario Admin</label>
+                            <input type="text" class="form-control" id="adminUsername">
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="adminPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Acceder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Cambiar clase activa en navbar al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Cambiar enlace activo al hacer clic
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

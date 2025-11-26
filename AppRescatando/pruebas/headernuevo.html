@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescatando Mascotas - Header Moderno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="headernuevo.css">
+</head>
+<body>
+    <!-- Header Moderno con Glassmorphism -->
+    <nav class="navbar navbar-expand-lg navbar-moderno fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div class="brand-container">
+                    <i class="fas fa-paw brand-icon"></i>
+                    <span class="brand-text">Rescatando Mascotas</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#adopta">
+                            <i class="fas fa-heart nav-icon"></i>
+                            <span>Adopta</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rescata">
+                            <i class="fas fa-plus-circle nav-icon"></i>
+                            <span>Rescata</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suscripciones.html">
+                            <i class="fas fa-star nav-icon"></i>
+                            <span>Suscripciones</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#donaciones">
+                            <i class="fas fa-hand-holding-heart nav-icon"></i>
+                            <span>Donaciones</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">
+                            <i class="fas fa-users nav-icon"></i>
+                            <span>Nosotros</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle nav-icon"></i>
+                            <span>Mi Cuenta</span>
+                        </a>
+                        <ul class="dropdown-menu glass-dropdown">
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    Iniciar Sesión
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                    <i class="fas fa-user-plus"></i>
+                                    Registrarse
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#adminModal">
+                                    <i class="fas fa-cog"></i>
+                                    Panel Admin
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal de Inicio de Sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-sign-in-alt me-2"></i>
+                        Iniciar Sesión
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail" class="form-label">Correo electrónico</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <input type="email" class="form-control" id="loginEmail" required placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword" class="form-label">Contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <input type="password" class="form-control" id="loginPassword" required placeholder="••••••••">
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Recordarme</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">
+                            <i class="fas fa-sign-in-alt me-2"></i>
+                            Iniciar Sesión
+                        </button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Registro -->
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-user-plus me-2"></i>
+                        Crear Cuenta
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerName" class="form-label">Nombre completo</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <input type="text" class="form-control" id="registerName" required placeholder="Tu nombre completo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail" class="form-label">Correo electrónico</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <input type="email" class="form-control" id="registerEmail" required placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword" class="form-label">Contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <input type="password" class="form-control" id="registerPassword" required placeholder="••••••••">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerConfirmPassword" class="form-label">Confirmar contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <input type="password" class="form-control" id="registerConfirmPassword" required placeholder="••••••••">
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                            <label class="form-check-label" for="acceptTerms">Acepto los términos y condiciones</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">
+                            <i class="fas fa-user-plus me-2"></i>
+                            Registrarse
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Administrador -->
+    <div class="modal fade" id="adminModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-cog me-2"></i>
+                        Panel de Administración
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adminForm">
+                        <div class="form-group">
+                            <label for="adminUsername" class="form-label">Usuario Admin</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-user-shield"></i>
+                                </span>
+                                <input type="text" class="form-control" id="adminUsername" required placeholder="Usuario administrador">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="adminPassword" class="form-label">Contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-key"></i>
+                                </span>
+                                <input type="password" class="form-control" id="adminPassword" required placeholder="••••••••">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">
+                            <i class="fas fa-unlock me-2"></i>
+                            Acceder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="header-moderno.js"></script>
+</body>
+</html>

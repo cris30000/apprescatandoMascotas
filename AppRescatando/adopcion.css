@@ -1,0 +1,487 @@
+/* Estilos específicos para la página de adopción */
+
+/* Hero Section Adopción */
+.hero-adopcion {
+    background: linear-gradient(135deg, #d3c4f1 0%, #645c92 100%);
+    color: white;
+    padding: 120px 0 80px;
+    margin-top: 76px;
+}
+
+.hero-adopcion h1 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.hero-adopcion .lead {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.hero-image {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px; /* Añadido para consistencia */
+}
+
+.hero-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap; /* Añadido para responsive */
+}
+
+.stat-item {
+    text-align: center; /* Mejor alineación */
+    flex: 1;
+    min-width: 120px; /* Evita que se hagan muy pequeños */
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #f6c23e; /* Color fijo ya que var(--accent-color) podría no estar definido */
+}
+
+.stat-item p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Filtros de Adopción */
+.filtros-adopcion {
+    padding: 40px 0;
+    background-color: #f8f9fc; /* Color fijo por si var(--light-color) no está definido */
+    border-bottom: 1px solid #e9ecef;
+}
+
+.filtros-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Galería de Mascotas */
+.galeria-mascotas {
+    padding: 80px 0;
+    background: white;
+}
+
+/* Cards de Mascotas */
+.card-mascota {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 30px; /* Asegura espacio entre cards */
+}
+
+.card-mascota:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.mascota-imagen {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.mascota-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-mascota:hover .mascota-imagen img {
+    transform: scale(1.05);
+}
+
+.mascota-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 2; /* Asegura que esté por encima de la imagen */
+}
+
+.mascota-badge.perro {
+    background: #4e73df; /* Color primario fijo */
+}
+
+.mascota-badge.gato {
+    background: #1cc88a; /* Color secundario fijo */
+}
+
+.mascota-badge.otro {
+    background: #f6c23e; /* Color acento fijo */
+}
+
+.mascota-acciones {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2; /* Asegura que esté por encima */
+}
+
+.btn-favorito {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+    background: white;
+    color: #6c757d;
+}
+
+.btn-favorito:hover {
+    background-color: #ff6b6b !important;
+    color: white !important;
+    transform: scale(1.1);
+}
+
+.btn-favorito.active {
+    background-color: #ff6b6b !important;
+    color: white !important;
+}
+
+.btn-favorito.active i {
+    color: white;
+}
+
+.mascota-info {
+    padding: 25px;
+}
+
+.mascota-info h4 {
+    color: #4e73df; /* Color primario fijo */
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.mascota-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mascota-edad, .mascota-genero {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mascota-genero.macho {
+    color: #4e73df;
+}
+
+.mascota-genero.hembra {
+    color: #e83e8c;
+}
+
+.mascota-detalles {
+    margin-bottom: 15px;
+}
+
+.mascota-detalles p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+/*
+.mascota-descripcion {
+    color: #5a5c69; 
+    /* Color texto fijo */
+  /*  line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 4.2em;
+     /* Altura mínima consistente */
+/*}*/
+
+.mascota-descripcion {
+    color: #5a5c69;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    min-height: 4.2em;
+    
+    /* Para navegadores modernos */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+.mascota-estado {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.mascota-estado .badge {
+    font-size: 0.7rem;
+    padding: 5px 8px;
+    border-radius: 12px;
+}
+
+.btn-adoptar {
+    width: 100%;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    background: #4e73df;
+    color: white;
+}
+
+.btn-adoptar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
+    background: #2e59d9;
+}
+
+/* Modal de Adopción */
+#modalAdopcion .modal-content {
+    border-radius: 15px;
+    border: none;
+    overflow: hidden;
+}
+
+#modalAdopcion .modal-header {
+    background: linear-gradient(135deg, #4e73df, #2e59d9);
+    color: white;
+    border-bottom: none;
+    padding: 20px 30px;
+}
+
+#modalAdopcion .modal-body {
+    padding: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+#modalAdopcion .section-title {
+    color: #4e73df;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+#modalAdopcion .form-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#modalAdopcion .form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Estados de los badges - CORREGIDO */
+.bg-success {
+    background-color: #1cc88a !important;
+}
+
+.bg-info {
+    background-color: #36b9cc !important;
+}
+
+.bg-warning {
+    background-color: #f6c23e !important;
+    color: #000 !important;
+}
+
+.bg-primary {
+    background-color: #4e73df !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-adopcion {
+        padding: 100px 0 60px;
+        text-align: center;
+    }
+    
+    .hero-adopcion h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .stat-item {
+        min-width: auto;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .filtros-container {
+        padding: 20px;
+    }
+    
+    .mascota-meta {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .mascota-info {
+        padding: 20px;
+    }
+    
+    #modalAdopcion .modal-body {
+        padding: 20px;
+        max-height: 60vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-adopcion {
+        padding: 80px 0 40px;
+    }
+    
+    .hero-adopcion h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-adopcion .lead {
+        font-size: 1.1rem;
+    }
+    
+    .filtros-container {
+        padding: 15px;
+    }
+    
+    #modalAdopcion .modal-body {
+        padding: 15px;
+    }
+    
+    .mascota-info h4 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-mascota {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Efectos de hover para botones */
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
+}
+
+/* Mejoras para formularios */
+.form-control:focus, .form-select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    padding: 10px 15px;
+}
+
+/* Loading states */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Mensajes de estado */
+.alert-adopcion {
+    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+/* Utilidades adicionales */
+.text-muted {
+    color: #6c757d !important;
+}
+
+.text-primary {
+    color: #4e73df !important;
+}
+
+/* Asegurar que las imágenes sean responsive */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .card-mascota,
+    .btn-adoptar,
+    .btn-favorito,
+    .mascota-imagen img {
+        transition: none;
+    }
+    
+    .card-mascota:hover {
+        transform: none;
+    }
+}
+
+/* Scroll suave para modal */
+#modalAdopcion .modal-body {
+    scroll-behavior: smooth;
+}

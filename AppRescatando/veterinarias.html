@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinarias Popayán - App Mascotas</title>
+    <link rel="stylesheet" href="veterinarias.css">
+</head>
+<body>
+    <div class="veterinarias-container">
+        <!-- Header -->
+        <header class="veterinarias-header">
+            <h1>Veterinarias en Popayán</h1>
+            <p>Encuentra la mejor atención para tu mascota</p>
+        </header>
+
+        <!-- Filtros -->
+        <section class="filtros-section">
+            <div class="filtros-container">
+                <input type="text" id="buscarVeterinaria" placeholder="Buscar veterinaria..." class="buscar-input">
+                
+                <select id="filtroServicio" class="filtro-select">
+                    <option value="">Todos los servicios</option>
+                    <option value="emergencia">Emergencias 24h</option>
+                    <option value="cirugia">Cirugía</option>
+                    <option value="vacunacion">Vacunación</option>
+                    <option value="estetica">Estética</option>
+                </select>
+
+                <select id="filtroZona" class="filtro-select">
+                    <option value="">Toda la ciudad</option>
+                    <option value="norte">Norte</option>
+                    <option value="sur">Sur</option>
+                    <option value="centro">Centro</option>
+                    <option value="oriente">Oriente</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Lista de Veterinarias -->
+        <section class="veterinarias-list">
+            <!-- Veterinaria 1 -->
+            <div class="veterinaria-card" data-servicios="emergencia,cirugia,vacunacion" data-zona="centro">
+                <div class="veterinaria-imagen">
+                    <img src="https://via.placeholder.com/300x200/4CAF50/white?text=Clínica+Veterinaria+Central" alt="Clínica Veterinaria Central">
+                </div>
+                <div class="veterinaria-info">
+                    <h3>Clínica Veterinaria Central</h3>
+                    <div class="veterinaria-details">
+                        <span class="direccion">📍 Calle 5 #10-20, Centro</span>
+                        <span class="telefono">📞 823 4567</span>
+                        <span class="horario">🕒 8:00 AM - 7:00 PM</span>
+                    </div>
+                    <div class="servicios-tags">
+                        <span class="tag emergencia">Emergencias 24h</span>
+                        <span class="tag cirugia">Cirugía</span>
+                        <span class="tag vacunacion">Vacunación</span>
+                    </div>
+                    <div class="veterinaria-actions">
+                        <button class="btn-llamar">Llamar</button>
+                        <button class="btn-ruta">Cómo llegar</button>
+                        <button class="btn-info">Más info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Veterinaria 2 -->
+            <div class="veterinaria-card" data-servicios="vacunacion,estetica" data-zona="norte">
+                <div class="veterinaria-imagen">
+                    <img src="https://via.placeholder.com/300x200/2196F3/white?text=Vet+Amigos+Peludos" alt="Vet Amigos Peludos">
+                </div>
+                <div class="veterinaria-info">
+                    <h3>Vet Amigos Peludos</h3>
+                    <div class="veterinaria-details">
+                        <span class="direccion">📍 Avenida Santander #25-30, Norte</span>
+                        <span class="telefono">📞 824 7890</span>
+                        <span class="horario">🕒 7:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="servicios-tags">
+                        <span class="tag vacunacion">Vacunación</span>
+                        <span class="tag estetica">Estética</span>
+                        <span class="tag consulta">Consulta general</span>
+                    </div>
+                    <div class="veterinaria-actions">
+                        <button class="btn-llamar">Llamar</button>
+                        <button class="btn-ruta">Cómo llegar</button>
+                        <button class="btn-info">Más info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Veterinaria 3 -->
+            <div class="veterinaria-card" data-servicios="emergencia,cirugia" data-zona="sur">
+                <div class="veterinaria-imagen">
+                    <img src="https://via.placeholder.com/300x200/FF9800/white?text=Emergency+Vet+Popayán" alt="Emergency Vet Popayán">
+                </div>
+                <div class="veterinaria-info">
+                    <h3>Emergency Vet Popayán</h3>
+                    <div class="veterinaria-details">
+                        <span class="direccion">📍 Calle 8 Sur #15-45, Sur</span>
+                        <span class="telefono">📞 825 1234</span>
+                        <span class="horario">🕒 24 horas</span>
+                    </div>
+                    <div class="servicios-tags">
+                        <span class="tag emergencia">Emergencias 24h</span>
+                        <span class="tag cirugia">Cirugía</span>
+                        <span class="tag urgencias">Urgencias</span>
+                    </div>
+                    <div class="veterinaria-actions">
+                        <button class="btn-llamar">Llamar</button>
+                        <button class="btn-ruta">Cómo llegar</button>
+                        <button class="btn-info">Más info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Veterinaria 4 -->
+            <div class="veterinaria-card" data-servicios="vacunacion,estetica,consulta" data-zona="oriente">
+                <div class="veterinaria-imagen">
+                    <img src="https://via.placeholder.com/300x200/9C27B0/white?text=Clínica+Animal+Feliz" alt="Clínica Animal Feliz">
+                </div>
+                <div class="veterinaria-info">
+                    <h3>Clínica Animal Feliz</h3>
+                    <div class="veterinaria-details">
+                        <span class="direccion">📍 Carrera 10 #40-50, Oriente</span>
+                        <span class="telefono">📞 826 5678</span>
+                        <span class="horario">🕒 9:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="servicios-tags">
+                        <span class="tag vacunacion">Vacunación</span>
+                        <span class="tag estetica">Estética</span>
+                        <span class="tag consulta">Consulta general</span>
+                        <span class="tag peluqueria">Peluquería</span>
+                    </div>
+                    <div class="veterinaria-actions">
+                        <button class="btn-llamar">Llamar</button>
+                        <button class="btn-ruta">Cómo llegar</button>
+                        <button class="btn-info">Más info</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa Section -->
+        <section class="mapa-section">
+            <h2>Veterinarias en el Mapa</h2>
+            <div class="mapa-container">
+                <div class="mapa-placeholder">
+                    <p>📍 Mapa interactivo de veterinarias en Popayán</p>
+                    <p><small>(Integrar con Google Maps API)</small></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="veterinarias.js"></script>
+</body>
+</html>

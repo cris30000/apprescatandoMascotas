@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas Disponibles - Patitas Felices</title>
+    
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Conoce nuestras mascotas disponibles para adopción: perros, gatos, aves y conejos. Cada uno con su historia, edad y estado de vacunación.">
+    <meta name="keywords" content="mascotas adopción, perros, gatos, aves, conejos, animales domésticos, adopción responsable">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mascotas.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-mascotas">
+        <div class="container">
+            <div class="row align-items-center min-vh-80">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Encuentra a tu Compañero Ideal</h1>
+                        <p class="hero-subtitle">
+                            Descubre a nuestros adorables rescatados listos para llenar tu hogar de amor y alegría. 
+                            Cada mascota tiene una historia única esperando por un final feliz.
+                        </p>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-paw"></i>
+                                <div>
+                                    <h3>4</h3>
+                                    <p>Tipos de Mascotas</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h3>50+</h3>
+                                    <p>Amigos Esperando</p>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <h3>100%</h3>
+                                    <p>Vacunados</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="hero-images">
+                        <div class="hero-grid">
+                            <div class="grid-item item-1">
+                                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Perro juguetón" class="img-fluid">
+                            </div>
+                            <div class="grid-item item-2">
+                                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Gato curioso" class="img-fluid">
+                            </div>
+                            <div class="grid-item item-3">
+                                <img src="https://images.unsplash.com/photo-159777694d0b63d4d0bc5febc9c6e996?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Conejo adorable" class="img-fluid">
+                            </div>
+                            <div class="grid-item item-4">
+                                <img src="https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                     alt="Ave colorida" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros de Mascotas -->
+    <section class="filtros-mascotas bg-light">
+        <div class="container">
+            <div class="filtros-content">
+                <h3 class="text-center mb-4">Encuentra por Tipo de Mascota</h3>
+                
+                <div class="filtros-grid">
+                    <button class="filtro-btn active" data-tipo="todos">
+                        <i class="fas fa-star"></i>
+                        <span>Todos</span>
+                    </button>
+                    <button class="filtro-btn" data-tipo="perro">
+                        <i class="fas fa-dog"></i>
+                        <span>Perros</span>
+                    </button>
+                    <button class="filtro-btn" data-tipo="gato">
+                        <i class="fas fa-cat"></i>
+                        <span>Gatos</span>
+                    </button>
+                    <button class="filtro-btn" data-tipo="ave">
+                        <i class="fas fa-dove"></i>
+                        <span>Aves</span>
+                    </button>
+                    <button class="filtro-btn" data-tipo="conejo">
+                        <i class="fas fa-paw"></i>
+                        <span>Conejos</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Mascotas -->
+    <section class="grid-mascotas">
+        <div class="container">
+            <div id="mascotas-container" class="row">
+                <!-- Perros -->
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mascota-item" data-tipo="perro">
+                    <div class="mascota-card">
+                        <div class="mascota-header">
+                            <div class="mascota-img">
+                                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Max - Labrador Dorado" class="img-fluid">
+                                <div class="mascota-badge perro">
+                                    <i class="fas fa-dog"></i>
+                                    Perro
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-body">
+                            <h3 class="mascota-nombre">Max</h3>
+                            <p class="mascota-descripcion">
+                                Labrador Dorado de 2 años, muy juguetón y cariñoso. Le encanta correr 
+                                en el parque y es excelente con los niños.
+                            </p>
+                            
+                            <div class="mascota-info">
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <div>
+                                        <strong>Edad</strong>
+                                        <span>2 años</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <div>
+                                        <strong>Género</strong>
+                                        <span>Macho</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-syringe"></i>
+                                    <div>
+                                        <strong>Vacunas</strong>
+                                        <span>Completas</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <div>
+                                        <strong>Salud</strong>
+                                        <span>Excelente</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mascota-vacunas">
+                                <h6>Vacunas Aplicadas:</h6>
+                                <div class="vacunas-list">
+                                    <span class="vacuna-item">Rabia</span>
+                                    <span class="vacuna-item">Múltiple</span>
+                                    <span class="vacuna-item">Bordetella</span>
+                                    <span class="vacuna-item">Leptospirosis</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-footer">
+                            <button class="btn btn-primary btn-adoptar">
+                                <i class="fas fa-heart me-2"></i>Adoptar
+                            </button>
+                            <button class="btn btn-outline-secondary btn-info">
+                                <i class="fas fa-info-circle me-2"></i>Más Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gatos -->
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mascota-item" data-tipo="gato">
+                    <div class="mascota-card">
+                        <div class="mascota-header">
+                            <div class="mascota-img">
+                                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Luna - Gata Atigrada" class="img-fluid">
+                                <div class="mascota-badge gato">
+                                    <i class="fas fa-cat"></i>
+                                    Gato
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-body">
+                            <h3 class="mascota-nombre">Luna</h3>
+                            <p class="mascota-descripcion">
+                                Gata atigrada de 3 años, tranquila y cariñosa. Le gusta tomar el sol 
+                                y recibir mimos suaves. Ideal para apartamentos.
+                            </p>
+                            
+                            <div class="mascota-info">
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <div>
+                                        <strong>Edad</strong>
+                                        <span>3 años</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <div>
+                                        <strong>Género</strong>
+                                        <span>Hembra</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-syringe"></i>
+                                    <div>
+                                        <strong>Vacunas</strong>
+                                        <span>Completas</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <div>
+                                        <strong>Salud</strong>
+                                        <span>Excelente</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mascota-vacunas">
+                                <h6>Vacunas Aplicadas:</h6>
+                                <div class="vacunas-list">
+                                    <span class="vacuna-item">Trivalente</span>
+                                    <span class="vacuna-item">Rabia</span>
+                                    <span class="vacuna-item">Leucemia</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-footer">
+                            <button class="btn btn-primary btn-adoptar">
+                                <i class="fas fa-heart me-2"></i>Adoptar
+                            </button>
+                            <button class="btn btn-outline-secondary btn-info">
+                                <i class="fas fa-info-circle me-2"></i>Más Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aves -->
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mascota-item" data-tipo="ave">
+                    <div class="mascota-card">
+                        <div class="mascota-header">
+                            <div class="mascota-img">
+                                <img src="https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Pipo - Loro Amazónico" class="img-fluid">
+                                <div class="mascota-badge ave">
+                                    <i class="fas fa-dove"></i>
+                                    Ave
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-body">
+                            <h3 class="mascota-nombre">Pipo</h3>
+                            <p class="mascota-descripcion">
+                                Loro Amazónico de 5 años, muy inteligente y sociable. Aprende palabras 
+                                rápidamente y le encanta la interacción.
+                            </p>
+                            
+                            <div class="mascota-info">
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <div>
+                                        <strong>Edad</strong>
+                                        <span>5 años</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <div>
+                                        <strong>Género</strong>
+                                        <span>Macho</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-syringe"></i>
+                                    <div>
+                                        <strong>Vacunas</strong>
+                                        <span>Básicas</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <div>
+                                        <strong>Salud</strong>
+                                        <span>Buena</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mascota-vacunas">
+                                <h6>Vacunas Aplicadas:</h6>
+                                <div class="vacunas-list">
+                                    <span class="vacuna-item">Polyomavirus</span>
+                                    <span class="vacuna-item">Psitacosis</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-footer">
+                            <button class="btn btn-primary btn-adoptar">
+                                <i class="fas fa-heart me-2"></i>Adoptar
+                            </button>
+                            <button class="btn btn-outline-secondary btn-info">
+                                <i class="fas fa-info-circle me-2"></i>Más Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conejos -->
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mascota-item" data-tipo="conejo">
+                    <div class="mascota-card">
+                        <div class="mascota-header">
+                            <div class="mascota-img">
+                                <img src="https://images.unsplash.com/photo-159777694d0b63d4d0bc5febc9c6e996?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Cotton - Conejo Enano" class="img-fluid">
+                                <div class="mascota-badge conejo">
+                                    <i class="fas fa-paw"></i>
+                                    Conejo
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-body">
+                            <h3 class="mascota-nombre">Cotton</h3>
+                            <p class="mascota-descripcion">
+                                Conejo enano de 1 año, muy tranquilo y curioso. Le encanta mordisquear 
+                                heno fresco y explorar espacios seguros.
+                            </p>
+                            
+                            <div class="mascota-info">
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <div>
+                                        <strong>Edad</strong>
+                                        <span>1 año</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <div>
+                                        <strong>Género</strong>
+                                        <span>Hembra</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-syringe"></i>
+                                    <div>
+                                        <strong>Vacunas</strong>
+                                        <span>Completas</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <div>
+                                        <strong>Salud</strong>
+                                        <span>Excelente</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mascota-vacunas">
+                                <h6>Vacunas Aplicadas:</h6>
+                                <div class="vacunas-list">
+                                    <span class="vacuna-item">Mixomatosis</span>
+                                    <span class="vacuna-item">VHD</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-footer">
+                            <button class="btn btn-primary btn-adoptar">
+                                <i class="fas fa-heart me-2"></i>Adoptar
+                            </button>
+                            <button class="btn btn-outline-secondary btn-info">
+                                <i class="fas fa-info-circle me-2"></i>Más Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Más Perros -->
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mascota-item" data-tipo="perro">
+                    <div class="mascota-card">
+                        <div class="mascota-header">
+                            <div class="mascota-img">
+                                <img src="https://images.unsplash.com/photo-1517423447168-cb804aafa6e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Bella - Pastor Alemán" class="img-fluid">
+                                <div class="mascota-badge perro">
+                                    <i class="fas fa-dog"></i>
+                                    Perro
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-body">
+                            <h3 class="mascota-nombre">Bella</h3>
+                            <p class="mascota-descripcion">
+                                Pastor Alemán de 4 años, inteligente y protectora. Necesita actividad 
+                                física regular y adora los juegos de inteligencia.
+                            </p>
+                            
+                            <div class="mascota-info">
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <div>
+                                        <strong>Edad</strong>
+                                        <span>4 años</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <div>
+                                        <strong>Género</strong>
+                                        <span>Hembra</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-syringe"></i>
+                                    <div>
+                                        <strong>Vacunas</strong>
+                                        <span>Completas</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <div>
+                                        <strong>Salud</strong>
+                                        <span>Excelente</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mascota-vacunas">
+                                <h6>Vacunas Aplicadas:</h6>
+                                <div class="vacunas-list">
+                                    <span class="vacuna-item">Rabia</span>
+                                    <span class="vacuna-item">Múltiple</span>
+                                    <span class="vacuna-item">Bordetella</span>
+                                    <span class="vacuna-item">Leptospirosis</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-footer">
+                            <button class="btn btn-primary btn-adoptar">
+                                <i class="fas fa-heart me-2"></i>Adoptar
+                            </button>
+                            <button class="btn btn-outline-secondary btn-info">
+                                <i class="fas fa-info-circle me-2"></i>Más Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Más Gatos -->
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mascota-item" data-tipo="gato">
+                    <div class="mascota-card">
+                        <div class="mascota-header">
+                            <div class="mascota-img">
+                                <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Simba - Gato Naranja" class="img-fluid">
+                                <div class="mascota-badge gato">
+                                    <i class="fas fa-cat"></i>
+                                    Gato
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-body">
+                            <h3 class="mascota-nombre">Simba</h3>
+                            <p class="mascota-descripcion">
+                                Gato naranja de 6 años, tranquilo y majestuoso. Le encanta dormir en 
+                                lugares altos y observar todo desde su trono.
+                            </p>
+                            
+                            <div class="mascota-info">
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <div>
+                                        <strong>Edad</strong>
+                                        <span>6 años</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <div>
+                                        <strong>Género</strong>
+                                        <span>Macho</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-syringe"></i>
+                                    <div>
+                                        <strong>Vacunas</strong>
+                                        <span>Completas</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <div>
+                                        <strong>Salud</strong>
+                                        <span>Excelente</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mascota-vacunas">
+                                <h6>Vacunas Aplicadas:</h6>
+                                <div class="vacunas-list">
+                                    <span class="vacuna-item">Trivalente</span>
+                                    <span class="vacuna-item">Rabia</span>
+                                    <span class="vacuna-item">Leucemia</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-footer">
+                            <button class="btn btn-primary btn-adoptar">
+                                <i class="fas fa-heart me-2"></i>Adoptar
+                            </button>
+                            <button class="btn btn-outline-secondary btn-info">
+                                <i class="fas fa-info-circle me-2"></i>Más Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Más Aves -->
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mascota-item" data-tipo="ave">
+                    <div class="mascota-card">
+                        <div class="mascota-header">
+                            <div class="mascota-img">
+                                <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Tweety - Canario Amarillo" class="img-fluid">
+                                <div class="mascota-badge ave">
+                                    <i class="fas fa-dove"></i>
+                                    Ave
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-body">
+                            <h3 class="mascota-nombre">Tweety</h3>
+                            <p class="mascota-descripcion">
+                                Canario amarillo de 2 años, canta melodías hermosas por las mañanas. 
+                                Muy activo y disfruta de baños regulares.
+                            </p>
+                            
+                            <div class="mascota-info">
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <div>
+                                        <strong>Edad</strong>
+                                        <span>2 años</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <div>
+                                        <strong>Género</strong>
+                                        <span>Macho</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-syringe"></i>
+                                    <div>
+                                        <strong>Vacunas</strong>
+                                        <span>Básicas</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <div>
+                                        <strong>Salud</strong>
+                                        <span>Excelente</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mascota-vacunas">
+                                <h6>Vacunas Aplicadas:</h6>
+                                <div class="vacunas-list">
+                                    <span class="vacuna-item">Polyomavirus</span>
+                                    <span class="vacuna-item">Psitacosis</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-footer">
+                            <button class="btn btn-primary btn-adoptar">
+                                <i class="fas fa-heart me-2"></i>Adoptar
+                            </button>
+                            <button class="btn btn-outline-secondary btn-info">
+                                <i class="fas fa-info-circle me-2"></i>Más Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Más Conejos -->
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-4 mascota-item" data-tipo="conejo">
+                    <div class="mascota-card">
+                        <div class="mascota-header">
+                            <div class="mascota-img">
+                                <img src="https://images.unsplash.com/photo-1452857297128-d9c29adba80b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                     alt="Orejas - Conejo Holandés" class="img-fluid">
+                                <div class="mascota-badge conejo">
+                                    <i class="fas fa-paw"></i>
+                                    Conejo
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-body">
+                            <h3 class="mascota-nombre">Orejas</h3>
+                            <p class="mascota-descripcion">
+                                Conejo holandés de 8 meses, muy juguetón y sociable. Le encanta correr 
+                                y hacer "binkies" cuando está feliz.
+                            </p>
+                            
+                            <div class="mascota-info">
+                                <div class="info-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <div>
+                                        <strong>Edad</strong>
+                                        <span>8 meses</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-venus-mars"></i>
+                                    <div>
+                                        <strong>Género</strong>
+                                        <span>Macho</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-syringe"></i>
+                                    <div>
+                                        <strong>Vacunas</strong>
+                                        <span>Completas</span>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-stethoscope"></i>
+                                    <div>
+                                        <strong>Salud</strong>
+                                        <span>Excelente</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mascota-vacunas">
+                                <h6>Vacunas Aplicadas:</h6>
+                                <div class="vacunas-list">
+                                    <span class="vacuna-item">Mixomatosis</span>
+                                    <span class="vacuna-item">VHD</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mascota-footer">
+                            <button class="btn btn-primary btn-adoptar">
+                                <i class="fas fa-heart me-2"></i>Adoptar
+                            </button>
+                            <button class="btn btn-outline-secondary btn-info">
+                                <i class="fas fa-info-circle me-2"></i>Más Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-paw me-2"></i>Cargar Más Mascotas
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+    <script src="mascotas.js"></script>
+    
+    <!-- Script para cargar componentes -->
+    <script>
+        // Cargar header y footer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar header
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+
+            // Cargar footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+
+            // Inicializar funcionalidades
+            inicializarMascotas();
+        });
+
+        function inicializarMascotas() {
+            // Filtros por tipo
+            const filtroBtns = document.querySelectorAll('.filtro-btn');
+            const mascotaItems = document.querySelectorAll('.mascota-item');
+
+            filtroBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remover active de todos los botones
+                    filtroBtns.forEach(b => b.classList.remove('active'));
+                    // Agregar active al botón clickeado
+                    this.classList.add('active');
+                    
+                    const tipo = this.dataset.tipo;
+                    
+                    // Filtrar mascotas
+                    mascotaItems.forEach(item => {
+                        if (tipo === 'todos' || item.dataset.tipo === tipo) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Botones de adoptar
+            document.querySelectorAll('.btn-adoptar').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const card = this.closest('.mascota-card');
+                    const nombre = card.querySelector('.mascota-nombre').textContent;
+                    alert(`¡Excelente elección! Has iniciado el proceso de adopción para ${nombre}. Te contactaremos pronto.`);
+                });
+            });
+
+            // Botones de más info
+            document.querySelectorAll('.btn-info').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const card = this.closest('.mascota-card');
+                    const nombre = card.querySelector('.mascota-nombre').textContent;
+                    alert(`Próximamente tendrás más información detallada sobre ${nombre}.`);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

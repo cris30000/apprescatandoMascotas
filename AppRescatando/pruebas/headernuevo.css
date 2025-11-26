@@ -1,0 +1,462 @@
+/* Variables CSS para colores y efectos */
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #f093fb;
+    --success-color: #4fd1c5;
+    --warning-color: #f6ad55;
+    --danger-color: #fc8181;
+    --dark-color: #2d3748;
+    --light-color: #f7fafc;
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --blur-effect: blur(20px);
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/* Navbar Moderno con Glassmorphism */
+.navbar-moderno {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+
+.navbar-moderno.scrolled {
+    background: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+}
+
+/* Brand Styles */
+.navbar-brand {
+    padding: 0;
+    transition: var(--transition);
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.brand-container:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.brand-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: var(--transition);
+}
+
+.brand-text {
+    font-weight: 700;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav Items */
+.navbar-nav {
+    gap: 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px !important;
+    border-radius: 50px;
+    color: var(--dark-color) !important;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-icon {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover .nav-icon {
+    transform: scale(1.2);
+    color: var(--accent-color);
+}
+
+.nav-link.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.nav-link.active .nav-icon {
+    color: white;
+}
+
+/* Dropdown Styles */
+.dropdown-menu.glass-dropdown {
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 20px;
+    padding: 12px;
+    margin-top: 12px !important;
+    animation: dropdownFadeIn 0.3s ease;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: var(--dark-color);
+    transition: var(--transition);
+    margin: 4px 0;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(8px);
+    color: var(--primary-color);
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 8px 0;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28102, 126, 234, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Modal Styles */
+.glass-modal {
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-bottom: 1px solid var(--glass-border);
+    padding: 24px;
+}
+
+.modal-title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.modal-body {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-group {
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.input-group:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.input-group-text {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    padding: 12px 16px;
+}
+
+.form-control {
+    background: transparent;
+    border: none;
+    color: var(--dark-color);
+    padding: 12px 16px;
+    font-size: 1rem;
+}
+
+.form-control::placeholder {
+    color: rgba(45, 55, 72, 0.6);
+}
+
+.form-control:focus {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: var(--dark-color);
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-check-input {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-label {
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 16px;
+    padding: 14px 24px;
+    font-weight: 600;
+    color: white;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+}
+
+/* Text Link */
+.text-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: var(--glass-bg);
+        backdrop-filter: var(--blur-effect);
+        -webkit-backdrop-filter: var(--blur-effect);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        padding: 20px;
+        margin-top: 16px;
+        box-shadow: var(--glass-shadow);
+    }
+    
+    .navbar-nav {
+        gap: 4px;
+    }
+    
+    .nav-link {
+        justify-content: center;
+        text-align: center;
+        margin: 4px 0;
+    }
+    
+    .brand-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .brand-text {
+        font-size: 1.2rem;
+    }
+    
+    .brand-icon {
+        font-size: 1.6rem;
+    }
+    
+    .modal-dialog {
+        margin: 20px;
+    }
+    
+    .glass-modal {
+        margin: 20px;
+    }
+}
+
+/* Animaciones adicionales */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Efectos de partículas para fondo (opcional) */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}

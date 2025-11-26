@@ -1,0 +1,579 @@
+/* ===== VARIABLES Y CONFIGURACIÓN GENERAL ===== */
+:root {
+    --primary-color: #4e54c8;
+    --secondary-color: #8f94fb;
+    --accent-color: #ff6b6b;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --perro-color: #4e54c8;
+    --gato-color: #ff6b6b;
+    --ave-color: #ffc107;
+    --conejo-color: #28a745;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --gradient-primary: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+    --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #ffa8a8 100%);
+    --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.15);
+    --border-radius: 16px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    overflow-x: hidden;
+}
+
+/* ===== HERO SECTION MASCOTAS ===== */
+.hero-mascotas {
+    background: var(--gradient-hero);
+    color: white;
+    padding: 100px 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-mascotas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.min-vh-80 {
+    min-height: 80vh;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-item i {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Hero Grid de Imágenes */
+.hero-images {
+    position: relative;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    height: 400px;
+}
+
+.grid-item {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+    transition: var(--transition);
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.item-2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.item-3 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.item-4 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* ===== FILTROS DE MASCOTAS ===== */
+.filtros-mascotas {
+    padding: 40px 0;
+}
+
+.filtros-content h3 {
+    color: var(--dark-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.filtros-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    background: white;
+    color: var(--dark-color);
+    transition: var(--transition);
+    min-width: 100px;
+    cursor: pointer;
+}
+
+.filtro-btn:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+}
+
+.filtro-btn.active {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.filtro-btn i {
+    font-size: 1.5rem;
+}
+
+.filtro-btn span {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* ===== GRID DE MASCOTAS ===== */
+.grid-mascotas {
+    padding: 80px 0;
+    background: white;
+}
+
+.mascota-item {
+    transition: var(--transition);
+}
+
+.mascota-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid #f8f9fa;
+}
+
+.mascota-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* Header de la Card */
+.mascota-header {
+    position: relative;
+}
+
+.mascota-img {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mascota-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.mascota-card:hover .mascota-img img {
+    transform: scale(1.1);
+}
+
+.mascota-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-light);
+}
+
+.mascota-badge.perro {
+    background: var(--perro-color);
+}
+
+.mascota-badge.gato {
+    background: var(--gato-color);
+}
+
+.mascota-badge.ave {
+    background: var(--ave-color);
+}
+
+.mascota-badge.conejo {
+    background: var(--conejo-color);
+}
+
+/* Body de la Card */
+.mascota-body {
+    padding: 1.5rem;
+}
+
+.mascota-nombre {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.mascota-descripcion {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Información de la Mascota */
+.mascota-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.info-item i {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    width: 24px;
+    text-align: center;
+}
+
+.info-item div {
+    flex: 1;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.info-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Sección de Vacunas */
+.mascota-vacunas {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.mascota-vacunas h6 {
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.vacunas-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.vacuna-item {
+    background: white;
+    padding: 0.35rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: var(--dark-color);
+    border: 1px solid #e9ecef;
+    font-weight: 500;
+}
+
+/* Footer de la Card */
+.mascota-footer {
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.mascota-footer .btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+}
+
+.btn-adoptar {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-adoptar:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-info:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-grid {
+        height: 350px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .stat-item {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .hero-grid {
+        height: 300px;
+        margin-top: 2rem;
+    }
+    
+    .mascota-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-mascotas {
+        padding: 80px 0 40px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .grid-mascotas {
+        padding: 60px 0;
+    }
+    
+    .filtros-grid {
+        gap: 0.5rem;
+    }
+    
+    .filtro-btn {
+        padding: 1rem 0.75rem;
+        min-width: 80px;
+    }
+    
+    .filtro-btn i {
+        font-size: 1.25rem;
+    }
+    
+    .filtro-btn span {
+        font-size: 0.8rem;
+    }
+    
+    .mascota-footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-grid {
+        height: 250px;
+        gap: 10px;
+    }
+    
+    .mascota-body {
+        padding: 1rem;
+    }
+    
+    .mascota-footer {
+        padding: 1rem;
+    }
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mascota-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.mascota-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.mascota-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.mascota-item:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.mascota-item:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.mascota-item:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.mascota-item:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.mascota-item:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+/* ===== ESTADOS INTERACTIVOS ===== */
+.mascota-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.mascota-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition);
+}
+
+.mascota-card:hover::before {
+    left: 100%;
+}
+
+/* Efecto de brillo en hover */
+.mascota-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.mascota-card:hover .mascota-img::after {
+    opacity: 1;
+}

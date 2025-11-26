@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoptar Mascotas - Rescatando Mascotas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="adopcion.css">
+</head>
+<body>
+    <!-- Header -->
+   <!-- Header -->
+    <div id="headermejorado"></div>
+    <!-- Hero Section Adopción -->
+    <section class="hero-adopcion">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Encuentra a tu Nuevo Mejor Amigo</h1>
+                    <p class="lead">Cada adopción cambia dos vidas: la de la mascota y la tuya. Descubre compañeros leales que esperan un hogar lleno de amor.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>250+</h3>
+                            <p>Adopciones Exitosas</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>98%</h3>
+                            <p>Tasa de Éxito</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>Seguimiento Post-Adopción</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                         alt="Familia con mascota adoptada" class="img-fluid rounded hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros de Búsqueda -->
+    <section class="filtros-adopcion">
+        <div class="container">
+            <div class="filtros-container">
+                <h3 class="text-center mb-4">Encuentra a tu compañero ideal</h3>
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <select class="form-select" id="filtroTipo">
+                            <option value="todos">Todos los animales</option>
+                            <option value="perro">Perros</option>
+                            <option value="gato">Gatos</option>
+                            <option value="otro">Otros</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" id="filtroEdad">
+                            <option value="todos">Todas las edades</option>
+                            <option value="cachorro">Cachorro (0-1 año)</option>
+                            <option value="joven">Joven (1-3 años)</option>
+                            <option value="adulto">Adulto (3-8 años)</option>
+                            <option value="senior">Senior (8+ años)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" id="filtroTamanio">
+                            <option value="todos">Todos los tamaños</option>
+                            <option value="pequeno">Pequeño</option>
+                            <option value="mediano">Mediano</option>
+                            <option value="grande">Grande</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select" id="filtroGenero">
+                            <option value="todos">Todos</option>
+                            <option value="macho">Macho</option>
+                            <option value="hembra">Hembra</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary" id="btnBuscar">
+                        <i class="fas fa-search me-2"></i>Buscar Mascotas
+                    </button>
+                    <button class="btn btn-outline-secondary ms-2" id="btnReset">
+                        <i class="fas fa-redo me-2"></i>Limpiar Filtros
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Mascotas -->
+    <section class="galeria-mascotas" id="galeria">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col">
+                    <h2>Mascotas en Busca de Hogar</h2>
+                    <p class="lead">Conoce a nuestros amigos que esperan una familia</p>
+                </div>
+            </div>
+
+            <div class="row" id="gridMascotas">
+                <!-- Mascota 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-tipo="perro" data-edad="joven" data-tamanio="mediano" data-genero="macho">
+                    <div class="card-mascota">
+                        <div class="mascota-imagen">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=612&q=80" 
+                                 alt="Max - Labrador Mix" class="img-fluid">
+                            <div class="mascota-badge perro">Perro</div>
+                            <div class="mascota-acciones">
+                                <button class="btn btn-sm btn-light btn-favorito" data-mascota="1">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mascota-info">
+                            <h4>Max</h4>
+                            <div class="mascota-meta">
+                                <span class="mascota-edad"><i class="fas fa-birthday-cake me-1"></i>2 años</span>
+                                <span class="mascota-genero macho"><i class="fas fa-mars me-1"></i>Macho</span>
+                            </div>
+                            <div class="mascota-detalles">
+                                <p><strong>Raza:</strong> Labrador Mix</p>
+                                <p><strong>Color:</strong> Dorado</p>
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Encontrado en:</strong> Colonia Centro, cerca del parque</p>
+                            </div>
+                            <p class="mascota-descripcion">
+                                Max es un perro juguetón y cariñoso que adora los paseos y los niños. Se lleva bien con otros perros y está entrenado básicamente.
+                            </p>
+                            <div class="mascota-estado">
+                                <span class="badge bg-success">Disponible</span>
+                                <span class="badge bg-info">Vacunado</span>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary btn-adoptar" data-mascota="1" data-bs-toggle="modal" data-bs-target="#modalAdopcion">
+                                    <i class="fas fa-heart me-2"></i>Adoptar a Max
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mascota 2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-tipo="gato" data-edad="adulto" data-tamanio="pequeno" data-genero="hembra">
+                    <div class="card-mascota">
+                        <div class="mascota-imagen">
+                            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Luna - Gato Doméstico" class="img-fluid">
+                            <div class="mascota-badge gato">Gato</div>
+                            <div class="mascota-acciones">
+                                <button class="btn btn-sm btn-light btn-favorito" data-mascota="2">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mascota-info">
+                            <h4>Luna</h4>
+                            <div class="mascota-meta">
+                                <span class="mascota-edad"><i class="fas fa-birthday-cake me-1"></i>3 años</span>
+                                <span class="mascota-genero hembra"><i class="fas fa-venus me-1"></i>Hembra</span>
+                            </div>
+                            <div class="mascota-detalles">
+                                <p><strong>Raza:</strong> Gato Doméstico</p>
+                                <p><strong>Color:</strong> Gris con blanco</p>
+                                <p><strong>Tamaño:</strong> Pequeño</p>
+                                <p><strong>Encontrado en:</strong> Zona Norte, jardines comunitarios</p>
+                            </div>
+                            <p class="mascota-descripcion">
+                                Luna es una gata tranquila que disfruta de la compañía y los mimos. Le gusta tomar siestas al sol y es muy limpia.
+                            </p>
+                            <div class="mascota-estado">
+                                <span class="badge bg-success">Disponible</span>
+                                <span class="badge bg-info">Esterilizada</span>
+                                <span class="badge bg-warning">Necesita hogar tranquilo</span>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary btn-adoptar" data-mascota="2" data-bs-toggle="modal" data-bs-target="#modalAdopcion">
+                                    <i class="fas fa-heart me-2"></i>Adoptar a Luna
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mascota 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-tipo="perro" data-edad="cachorro" data-tamanio="pequeno" data-genero="hembra">
+                    <div class="card-mascota">
+                        <div class="mascota-imagen">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Bella - Chihuahua Mix" class="img-fluid">
+                            <div class="mascota-badge perro">Perro</div>
+                            <div class="mascota-acciones">
+                                <button class="btn btn-sm btn-light btn-favorito" data-mascota="3">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mascota-info">
+                            <h4>Bella</h4>
+                            <div class="mascota-meta">
+                                <span class="mascota-edad"><i class="fas fa-birthday-cake me-1"></i>6 meses</span>
+                                <span class="mascota-genero hembra"><i class="fas fa-venus me-1"></i>Hembra</span>
+                            </div>
+                            <div class="mascota-detalles">
+                                <p><strong>Raza:</strong> Chihuahua Mix</p>
+                                <p><strong>Color:</strong> Café y blanco</p>
+                                <p><strong>Tamaño:</strong> Pequeño</p>
+                                <p><strong>Encontrado en:</strong> Mercado municipal</p>
+                            </div>
+                            <p class="mascota-descripcion">
+                                Bella es una cachorra energética y curiosa. Le encanta jugar y explorar. Será una compañera perfecta para familias activas.
+                            </p>
+                            <div class="mascota-estado">
+                                <span class="badge bg-success">Disponible</span>
+                                <span class="badge bg-info">Vacunada</span>
+                                <span class="badge bg-primary">Aprendiendo</span>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary btn-adoptar" data-mascota="3" data-bs-toggle="modal" data-bs-target="#modalAdopcion">
+                                    <i class="fas fa-heart me-2"></i>Adoptar a Bella
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mascota 4 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-tipo="gato" data-edad="joven" data-tamanio="mediano" data-genero="macho">
+                    <div class="card-mascota">
+                        <div class="mascota-imagen">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Simba - Gato Naranja" class="img-fluid">
+                            <div class="mascota-badge gato">Gato</div>
+                            <div class="mascota-acciones">
+                                <button class="btn btn-sm btn-light btn-favorito" data-mascota="4">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mascota-info">
+                            <h4>Simba</h4>
+                            <div class="mascota-meta">
+                                <span class="mascota-edad"><i class="fas fa-birthday-cake me-1"></i>1.5 años</span>
+                                <span class="mascota-genero macho"><i class="fas fa-mars me-1"></i>Macho</span>
+                            </div>
+                            <div class="mascota-detalles">
+                                <p><strong>Raza:</strong> Gato Doméstico</p>
+                                <p><strong>Color:</strong> Naranja atigrado</p>
+                                <p><strong>Tamaño:</strong> Mediano</p>
+                                <p><strong>Encontrado en:</strong> Parque industrial abandonado</p>
+                            </div>
+                            <p class="mascota-descripcion">
+                                Simba es un gato juguetón y aventurero. Le encanta trepar y explorar. Se lleva bien con otros gatos y es muy cariñoso.
+                            </p>
+                            <div class="mascota-estado">
+                                <span class="badge bg-success">Disponible</span>
+                                <span class="badge bg-info">Esterilizado</span>
+                                <span class="badge bg-warning">Necesita espacio</span>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary btn-adoptar" data-mascota="4" data-bs-toggle="modal" data-bs-target="#modalAdopcion">
+                                    <i class="fas fa-heart me-2"></i>Adoptar a Simba
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mascota 5 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-tipo="perro" data-edad="adulto" data-tamanio="grande" data-genero="macho">
+                    <div class="card-mascota">
+                        <div class="mascota-imagen">
+                            <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Rocky - Beagle" class="img-fluid">
+                            <div class="mascota-badge perro">Perro</div>
+                            <div class="mascota-acciones">
+                                <button class="btn btn-sm btn-light btn-favorito" data-mascota="5">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mascota-info">
+                            <h4>Rocky</h4>
+                            <div class="mascota-meta">
+                                <span class="mascota-edad"><i class="fas fa-birthday-cake me-1"></i>4 años</span>
+                                <span class="mascota-genero macho"><i class="fas fa-mars me-1"></i>Macho</span>
+                            </div>
+                            <div class="mascota-detalles">
+                                <p><strong>Raza:</strong> Beagle</p>
+                                <p><strong>Color:</strong> Tricolor</p>
+                                <p><strong>Tamaño:</strong> Grande</p>
+                                <p><strong>Encontrado en:</strong> Carretera sur, km 25</p>
+                            </div>
+                            <p class="mascota-descripcion">
+                                Rocky es un perro energético que necesita una familia activa. Le encanta correr y jugar. Es muy inteligente y aprende rápido.
+                            </p>
+                            <div class="mascota-estado">
+                                <span class="badge bg-success">Disponible</span>
+                                <span class="badge bg-info">Vacunado</span>
+                                <span class="badge bg-primary">Entrenado</span>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary btn-adoptar" data-mascota="5" data-bs-toggle="modal" data-bs-target="#modalAdopcion">
+                                    <i class="fas fa-heart me-2"></i>Adoptar a Rocky
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mascota 6 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-tipo="otro" data-edad="adulto" data-tamanio="pequeno" data-genero="macho">
+                    <div class="card-mascota">
+                        <div class="mascota-imagen">
+                            <img src="https://images.unsplash.com/photo-1557008071-6ec8d74e9c6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="Algodón - Conejo" class="img-fluid">
+                            <div class="mascota-badge otro">Conejo</div>
+                            <div class="mascota-acciones">
+                                <button class="btn btn-sm btn-light btn-favorito" data-mascota="6">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mascota-info">
+                            <h4>Algodón</h4>
+                            <div class="mascota-meta">
+                                <span class="mascota-edad"><i class="fas fa-birthday-cake me-1"></i>2 años</span>
+                                <span class="mascota-genero macho"><i class="fas fa-mars me-1"></i>Macho</span>
+                            </div>
+                            <div class="mascota-detalles">
+                                <p><strong>Especie:</strong> Conejo Doméstico</p>
+                                <p><strong>Color:</strong> Blanco</p>
+                                <p><strong>Tamaño:</strong> Pequeño</p>
+                                <p><strong>Encontrado en:</strong> Parque central</p>
+                            </div>
+                            <p class="mascota-descripcion">
+                                Algodón es un conejo tranquilo y dócil. Le gusta la compañía y es muy limpio. Ideal para familias que buscan una mascota tranquila.
+                            </p>
+                            <div class="mascota-estado">
+                                <span class="badge bg-success">Disponible</span>
+                                <span class="badge bg-warning">Necesita jaula espaciosa</span>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button class="btn btn-primary btn-adoptar" data-mascota="6" data-bs-toggle="modal" data-bs-target="#modalAdopcion">
+                                    <i class="fas fa-heart me-2"></i>Adoptar a Algodón
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-paw me-2"></i>Ver Más Mascotas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Adopción -->
+    <div class="modal fade" id="modalAdopcion" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAdopcionTitle">Formulario de Adopción</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioAdopcion">
+                        <div class="row mb-4">
+                            <div class="col-md-4 text-center">
+                                <img id="modalMascotaImagen" src="" alt="" class="img-fluid rounded mb-3" style="max-height: 200px;">
+                                <h5 id="modalMascotaNombre" class="text-primary"></h5>
+                                <p id="modalMascotaDetalles" class="text-muted small"></p>
+                            </div>
+                            <div class="col-md-8">
+                                <h6>Información de la Mascota Seleccionada</h6>
+                                <div id="modalMascotaInfo"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h6 class="section-title">
+                                <i class="fas fa-user me-2"></i>Información Personal
+                            </h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="adopcionNombre" class="form-label">Nombre Completo *</label>
+                                        <input type="text" class="form-control" id="adopcionNombre" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="adopcionEmail" class="form-label">Correo Electrónico *</label>
+                                        <input type="email" class="form-control" id="adopcionEmail" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="adopcionTelefono" class="form-label">Teléfono *</label>
+                                        <input type="tel" class="form-control" id="adopcionTelefono" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="adopcionEdad" class="form-label">Tu Edad *</label>
+                                        <input type="number" class="form-control" id="adopcionEdad" min="18" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h6 class="section-title">
+                                <i class="fas fa-home me-2"></i>Información del Hogar
+                            </h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="adopcionVivienda" class="form-label">Tipo de Vivienda *</label>
+                                        <select class="form-select" id="adopcionVivienda" required>
+                                            <option value="">Seleccionar...</option>
+                                            <option value="casa">Casa con patio</option>
+                                            <option value="casa_sin_patio">Casa sin patio</option>
+                                            <option value="departamento">Departamento</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="adopcionEspacio" class="form-label">¿Tienes espacio adecuado? *</label>
+                                        <select class="form-select" id="adopcionEspacio" required>
+                                            <option value="">Seleccionar...</option>
+                                            <option value="si">Sí, espacio suficiente</option>
+                                            <option value="no">No, espacio limitado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="adopcionDireccion" class="form-label">Dirección Completa *</label>
+                                <textarea class="form-control" id="adopcionDireccion" rows="2" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h6 class="section-title">
+                                <i class="fas fa-users me-2"></i>Composición Familiar
+                            </h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="adopcionPersonas" class="form-label">Número de personas en el hogar *</label>
+                                        <input type="number" class="form-control" id="adopcionPersonas" min="1" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="adopcionNinos" class="form-label">¿Hay niños? *</label>
+                                        <select class="form-select" id="adopcionNinos" required>
+                                            <option value="">Seleccionar...</option>
+                                            <option value="si">Sí</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="adopcionMascotas" class="form-label">¿Tienes otras mascotas? *</label>
+                                <select class="form-select" id="adopcionMascotas" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="si">Sí</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3" id="mascotasExistentes" style="display: none;">
+                                <label class="form-label">Describe tus mascotas actuales</label>
+                                <textarea class="form-control" id="adopcionMascotasDesc" rows="2" placeholder="Tipo, edad, temperamento..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h6 class="section-title">
+                                <i class="fas fa-question-circle me-2"></i>Preguntas de Adopción
+                            </h6>
+                            <div class="mb-3">
+                                <label for="adopcionExperiencia" class="form-label">¿Tienes experiencia con mascotas? *</label>
+                                <select class="form-select" id="adopcionExperiencia" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="mucha">Mucha experiencia</option>
+                                    <option value="alguna">Alguna experiencia</option>
+                                    <option value="poca">Poca experiencia</option>
+                                    <option value="ninguna">Ninguna experiencia</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="adopcionTiempo" class="form-label">¿Cuánto tiempo pasará solo la mascota? *</label>
+                                <select class="form-select" id="adopcionTiempo" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="poco">Menos de 4 horas al día</option>
+                                    <option value="moderado">4-8 horas al día</option>
+                                    <option value="mucho">Más de 8 horas al día</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="adopcionMotivo" class="form-label">¿Por qué quieres adoptar? *</label>
+                                <textarea class="form-control" id="adopcionMotivo" rows="3" required placeholder="Cuéntanos sobre tu motivación para adoptar..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="adopcionTerminos" required>
+                                <label class="form-check-label" for="adopcionTerminos">
+                                    Acepto los <a href="#" class="text-primary">términos y condiciones</a> de adopción *
+                                </label>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="adopcionCompromiso" required>
+                                <label class="form-check-label" for="adopcionCompromiso">
+                                    Me comprometo a proporcionar cuidados veterinarios adecuados *
+                                </label>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="adopcionSeguimiento">
+                                <label class="form-check-label" for="adopcionSeguimiento">
+                                    Acepto el seguimiento post-adopción por parte de la organización
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Enviar Solicitud de Adopción
+                            </button>
+                            <p class="text-muted mt-2">* Campos obligatorios</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Footer -->
+    <div id="footer"></div>
+
+    
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="script.js"></script>
+    <script src="adopcion.js"></script>
+</body>
+</html>
